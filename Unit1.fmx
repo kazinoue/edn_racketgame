@@ -1,0 +1,254 @@
+object GameForm: TGameForm
+  Left = 0
+  Top = 0
+  Caption = 'Retrospective Racket Game'
+  ClientHeight = 602
+  ClientWidth = 392
+  StyleBook = StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 2
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 392.000000000000000000
+    Size.Height = 90.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Panel2: TPanel
+      Align = Right
+      Position.X = 152.000000000000000000
+      Size.Width = 240.000000000000000000
+      Size.Height = 90.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object ScreenPanel: TPanel
+        Align = Top
+        Size.Width = 240.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'CourtStyle1'
+        TabOrder = 0
+        object ScoreTitle: TLabel
+          Align = Left
+          StyledSettings = [Family, Style]
+          Margins.Left = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 95.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          Text = 'ScoreTitle'
+          TabOrder = 0
+        end
+        object ScoreLabel: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Margins.Right = 10.000000000000000000
+          Size.Width = 125.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Trailing
+          Text = '0'
+          TabOrder = 1
+        end
+      end
+      object RacketPanel: TPanel
+        Align = Client
+        Size.Width = 240.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'CourtStyle1'
+        TabOrder = 1
+        object Racket1: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'Label1Style1'
+          TabOrder = 1
+        end
+        object Racket2: TLabel
+          Position.X = 72.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'Label1Style1'
+          TabOrder = 2
+        end
+        object Racket3: TLabel
+          Position.X = 128.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'Label1Style1'
+          TabOrder = 3
+        end
+        object Racket4: TLabel
+          Position.X = 184.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'Label1Style1'
+          TabOrder = 4
+        end
+      end
+    end
+    object StartButton: TSpeedButton
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 23.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'playtoolbutton'
+      Text = 'START'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      OnClick = StartButtonClick
+    end
+    object StopButton: TSpeedButton
+      Align = Left
+      Enabled = False
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 10.000000000000000000
+      Position.X = 64.000000000000000000
+      Position.Y = 23.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'pausetoolbutton'
+      Text = 'STOP'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      OnClick = StopButtonClick
+    end
+  end
+  object Court: TPanel
+    Align = Client
+    Size.Width = 392.000000000000000000
+    Size.Height = 512.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'CourtStyle1'
+    TabOrder = 1
+    object Racket: TLabel
+      Position.X = 40.000000000000000000
+      Position.Y = 400.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'Label1Style1'
+      Text = 'Racket'
+      TabOrder = 1
+      object FloatAnimation1: TFloatAnimation
+        Duration = 0.100000001490116100
+        PropertyName = 'Position.X'
+        StartValue = 0.000000000000000000
+        StopValue = 0.000000000000000000
+      end
+    end
+    object Ball: TLabel
+      Position.X = 120.000000000000000000
+      Position.Y = 50.000000000000000000
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'BallStyle1'
+      Visible = False
+      TabOrder = 2
+    end
+    object Layout1: TLayout
+      Align = Bottom
+      Position.Y = 305.000000000000000000
+      Size.Width = 392.000000000000000000
+      Size.Height = 207.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object LeftButton: TSpeedButton
+        Align = Left
+        Position.Y = 16.000000000000000000
+        Scale.Y = 4.000000000000000000
+        Size.Width = 44.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'arrowlefttoolbutton'
+        Text = 'LeftButton'
+        OnClick = LeftButtonClick
+      end
+      object RightButton: TSpeedButton
+        Align = Right
+        Position.X = 348.000000000000000000
+        Position.Y = 16.000000000000000000
+        Scale.Y = 4.000000000000000000
+        Size.Width = 44.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'arrowrighttoolbutton'
+        Text = 'SpeedButton1'
+        OnClick = RightButtonClick
+      end
+    end
+  end
+  object StyleBook1: TStyleBook
+    Styles = <
+      item
+        Platform = 'Default'
+        ResourcesBin = {
+          464D585F5354594C4520322E3501060B436F7572745374796C6531035B01060C
+          4C6162656C315374796C653103B401060A42616C6C5374796C653103A9010054
+          5046300A5452656374616E676C6500095374796C654E616D65060B436F757274
+          5374796C653105416C69676E070643656E7465720A46696C6C2E436F6C6F7207
+          097846464630463046300748697454657374080A53697A652E57696474680500
+          000000000000C407400B53697A652E4865696768740500000000000000C30740
+          1453697A652E506C6174666F726D44656661756C74080C5374726F6B652E436F
+          6C6F7207097846464343434343430756697369626C6508000A5452656374616E
+          676C6500095374796C654E616D65060F52656374616E676C65315374796C6505
+          416C69676E0706436C69656E740A46696C6C2E436F6C6F720708636C61426C61
+          636B0A53697A652E57696474680500000000000000C407400B53697A652E4865
+          696768740500000000000000C307401453697A652E506C6174666F726D446566
+          61756C74080B5374726F6B652E4B696E6407044E6F6E65000000545046300754
+          4C61796F757400095374796C654E616D65060C4C6162656C315374796C653105
+          416C69676E070643656E7465720A53697A652E57696474680500000000000000
+          F005400B53697A652E48656967687405000000000000008803401453697A652E
+          506C6174666F726D44656661756C74080756697369626C6508085461624F7264
+          657202010005545465787400095374796C654E616D6506047465787405416C69
+          676E0706436C69656E74064C6F636B6564090748697454657374080A53697A65
+          2E57696474680500000000000000F005400B53697A652E486569676874050000
+          00000000008803401453697A652E506C6174666F726D44656661756C74080454
+          65787406045465787400000A5452656374616E676C6500095374796C654E616D
+          65060F52656374616E676C65315374796C6505416C69676E0706436C69656E74
+          0A46696C6C2E436F6C6F7207097846464646433130370A53697A652E57696474
+          680500000000000000F005400B53697A652E4865696768740500000000000000
+          8803401453697A652E506C6174666F726D44656661756C74080B5374726F6B65
+          2E4B696E6407044E6F6E650000005450463007544C61796F757400095374796C
+          654E616D65060A42616C6C5374796C653105416C69676E070643656E7465720A
+          53697A652E57696474680500000000000000F005400B53697A652E4865696768
+          7405000000000000008803401453697A652E506C6174666F726D44656661756C
+          7408085461624F7264657202020005545465787400095374796C654E616D6506
+          047465787405416C69676E0706436C69656E74064C6F636B6564090748697454
+          657374080A53697A652E57696474680500000000000000F005400B53697A652E
+          48656967687405000000000000008803401453697A652E506C6174666F726D44
+          656661756C7408045465787406045465787400000A5452656374616E676C6500
+          095374796C654E616D65060F52656374616E676C65315374796C6505416C6967
+          6E0706436C69656E740A46696C6C2E436F6C6F7207097846464634343333360A
+          53697A652E57696474680500000000000000F005400B53697A652E4865696768
+          7405000000000000008803401453697A652E506C6174666F726D44656661756C
+          74080B5374726F6B652E4B696E6407044E6F6E65000000}
+      end>
+    Left = 16
+    Top = 160
+  end
+  object Timer1: TTimer
+    Interval = 10
+    OnTimer = Timer1Timer
+    Left = 16
+    Top = 200
+  end
+end
